@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model/Card.h"//;
+#import "Model/PlayingCardDeck.h"//;
 
 @interface ViewController : UIViewController
 
