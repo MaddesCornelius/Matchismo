@@ -11,7 +11,7 @@
 @interface PlayingCard : Card
 @property (strong, nonatomic) NSString* suit;
 @property (nonatomic) NSInteger rank;
-@property (nonatomic) NSMutableArray* loggingArray; // Type NS-String
+
 + (NSArray*) validSuits;
 + (NSArray*) validRanks;
 + (NSUInteger) maxRank;

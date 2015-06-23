@@ -8,25 +8,15 @@
 
 #import "PlayingCard.h"
 
-@interface PlayingCard ()
 
-@end
 
 @implementation PlayingCard
 
 @synthesize suit = _suit;
 @synthesize rank =_rank;
-@synthesize loggingArray = _loggingArray;
 
 
-- (NSMutableArray*) loggingArray
-{
-if (!_loggingArray)
-{
-    _loggingArray = [[NSMutableArray alloc]init];
-}
-    return _loggingArray;
-}
+
 
 - (NSString *)contents
 {
@@ -83,13 +73,13 @@ if (!_loggingArray)
         if (otherCard.rank == self.rank)
         {
             score = 4;
-            NSString* temp = [NSString stringWithFormat:@"%@%d and %@%d match in rank, score + 4",[self suit], [self rank], [otherCard suit], [otherCard rank]];
+            NSString* temp = [NSString stringWithFormat:@"%@%ld and %@%ld match in rank, score + 4",[self suit], (long)[self rank], [otherCard suit], (long)[otherCard rank]];
             [self.loggingArray addObject:temp];
         } else if ([otherCard.suit isEqualToString:(self.suit)])
         {
             
             score = 1;
-            NSString* temp = [NSString stringWithFormat:@"%@%d and %@%d match in suir, score + 1",[self suit], [self rank], [otherCard suit], [otherCard rank]];
+            NSString* temp = [NSString stringWithFormat:@"%@%ld and %@%ld match in suir, score + 1",[self suit], (long)[self rank], [otherCard suit], (long)[otherCard rank]];
             [self.loggingArray addObject:temp];
         }
     }
@@ -115,7 +105,7 @@ if (!_loggingArray)
                     }
                     score =+4;
                     
-                     NSString* temp = [NSString stringWithFormat:@"%@%d and %@%d match in rank, score + 4",[mainCard suit], [mainCard rank], [subCard suit], [subCard rank]];
+                     NSString* temp = [NSString stringWithFormat:@"%@%ld and %@%ld match in rank, score + 4",[mainCard suit], (long)[mainCard rank], [subCard suit], (long)[subCard rank]];
                     [self.loggingArray addObject:temp];
                     
                     
@@ -128,7 +118,7 @@ if (!_loggingArray)
                         [cardsSameSuit addObject:mainCard];
                     }
                     score =+1;
-                    NSString* temp = [NSString stringWithFormat:@"%@%d and %@%d match in suit, score + 1",[mainCard suit], [mainCard rank], [subCard suit], [subCard rank]];
+                    NSString* temp = [NSString stringWithFormat:@"%@%ld and %@%ld match in suit, score + 1",[mainCard suit], (long)[mainCard rank], [subCard suit], (long)[subCard rank]];
                     [self.loggingArray addObject:temp];
                 }
             }

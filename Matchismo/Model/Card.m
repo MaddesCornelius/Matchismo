@@ -7,11 +7,43 @@
 //
 
 #import "Card.h"
-@interface Card()
-@end
 
+@interface Card ()
+-(void)addToLogString:(NSString*) log;
+@end
 @implementation Card
 @synthesize contents = _contents;
+@synthesize loggingArray = _loggingArray;
+@synthesize logger = _logger;
+
+- (Logger*)logger
+{
+if (!_logger)
+{
+
+    _logger = [[Logger  alloc]init];
+}
+    return _logger;
+}
+
+
+- (void)addToLogString:(NSString *)log
+{
+    [self.loggingArray addObject:log];
+}
+
+
+- (NSMutableArray*) loggingArray
+{
+    if (!_loggingArray)
+    {
+        _loggingArray = [[NSMutableArray alloc]init];
+    }
+    
+    return _loggingArray;
+}
+
+
 
 -(int)match:(NSArray *)otherCards
 {
@@ -19,6 +51,7 @@
     {
         if ([[[otherCards objectAtIndex:i] contents] isEqualToString:self.contents])
             {
+            
                 return 1;
             }
     }

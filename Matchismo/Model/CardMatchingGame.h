@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Deck.h"
+#import "Logger.h"
+#import "LogMessage.h"
 
 @interface CardMatchingGame : NSObject
 //designated initializer
@@ -18,5 +20,7 @@
 -(Card*)cardAtIndex:(NSInteger)index;
 @property (nonatomic, readonly)NSInteger score;
 @property (nonatomic, readonly)NSInteger possibleNumberOfMatches;
+@property (nonatomic, strong) NSMutableArray* cards; //ofCard
+@property (nonatomic, readonly)Logger* logger;
 
 @end

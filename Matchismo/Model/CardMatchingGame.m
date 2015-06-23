@@ -7,9 +7,9 @@
 //
 
 #import "CardMatchingGame.h"
+#import "Logger.h"
 @interface CardMatchingGame()
 @property (nonatomic,readwrite)NSInteger score;
-@property (nonatomic, strong) NSMutableArray* cards; //of Card
 @property (nonatomic) NSInteger possibleNumberOfMatches;
 @property (nonatomic, strong)NSMutableArray* choosenCardMemory;
 @property (nonatomic, strong)NSString* gameLog;
@@ -19,6 +19,28 @@
 @synthesize choosenCardMemory = _choosenCardMemory;
 @synthesize possibleNumberOfMatches = _possibleNumberOfMatches;
 @synthesize gameLog = _gameLog;
+@synthesize logger = _logger;
+
+- (void) setLogger:(Logger *)logger
+{
+    _logger = logger;
+}
+
+- (Logger*)logger
+{
+
+if (!_logger)
+{
+    _logger = [[Logger alloc]init];
+}
+    return _logger;
+}
+
+- (void) addMessagesToLogger:(NSArray*)messages
+{
+    for (LogMessage* currentMessage in messages)
+    [self.logger addLogMessage:(LogMessage*)currentMessage];
+}
 
 -(NSMutableArray *)choosenCardMemory
 {
@@ -161,15 +183,18 @@ static const int COST_TO_CHOSE = 1;
                 if (matchScore)
                 {
                     self.score += matchScore * MATCH_BONUS;
+                    [self addMessagesToLogger:[selectedCard.logger logMessages]];
+                    
                     [self setAllCardsInChoosenCardsMemoryToMatched];
                 }
                 else
                 {
                     self.score -= MISMATCH_PENALTY;
+                    [self addMessagesToLogger:[selectedCard.logger logMessages]];
                     [self unmatchCardsInChoosenCardsMemory];
                     [self setAllCardsInChoosenCardsMemoryToNotChoosen];
                     //The last card picked shall stay visible
-                    selectedCard.Chosen = YES;
+                    selectedCard.chosen = YES;
                    
                 }
                 [self emptyChoosenCardsMemory];

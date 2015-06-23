@@ -13,6 +13,7 @@
 
 -(void)addCard:(Card*)aCard atTop:(BOOL)atTop;
 -(Card*)drawRandomCard;
+@property (strong, nonatomic, readonly) NSMutableArray* cards;
 
 
 @end
