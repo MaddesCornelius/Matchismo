@@ -15,6 +15,7 @@
 		A16B674D1B24C1D6009BC286 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B674C1B24C1D6009BC286 /* HistoryViewController.m */; };
 		A16B67501B24C9C8009BC286 /* SetCardToolbox.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B674F1B24C9C8009BC286 /* SetCardToolbox.m */; };
 		A16B67541B24D939009BC286 /* SetCardToolboxTestUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B67531B24D939009BC286 /* SetCardToolboxTestUnit.m */; };
+		A16D4E5C1B4CED2100A2C35B /* TestSetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16D4E5B1B4CED2100A2C35B /* TestSetGameViewController.m */; };
 		A19929D51AE2BBF900FF1D4A /* SetCardTestCasesClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A19929D41AE2BBF900FF1D4A /* SetCardTestCasesClass.m */; };
 		A19929D71AE2EDF500FF1D4A /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19929D61AE2EDF500FF1D4A /* SetGameViewController.m */; };
 		A1A0BB8A1A7C27E0004490DE /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A0BB891A7C27E0004490DE /* Card.m */; };
@@ -59,6 +60,9 @@
 		A16B674E1B24C9C8009BC286 /* SetCardToolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardToolbox.h; sourceTree = "<group>"; };
 		A16B674F1B24C9C8009BC286 /* SetCardToolbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardToolbox.m; sourceTree = "<group>"; };
 		A16B67531B24D939009BC286 /* SetCardToolboxTestUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardToolboxTestUnit.m; sourceTree = "<group>"; };
+		A16D4E5A1B4CED2100A2C35B /* TestSetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestSetGameViewController.h; path = UITests/TestSetGameViewController.h; sourceTree = "<group>"; };
+		A16D4E5B1B4CED2100A2C35B /* TestSetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestSetGameViewController.m; path = UITests/TestSetGameViewController.m; sourceTree = "<group>"; };
+		A175A6951B4B08680049F8AF /* SetGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
 		A19929D41AE2BBF900FF1D4A /* SetCardTestCasesClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardTestCasesClass.m; sourceTree = "<group>"; };
 		A19929D61AE2EDF500FF1D4A /* SetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
 		A1A0BB881A7C27E0004490DE /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				A1F522521A76B4D600F770DC /* ViewController.h */,
 				A1F522531A76B4D600F770DC /* ViewController.m */,
 				A1F522551A76B4D600F770DC /* Main.storyboard */,
+				A175A6951B4B08680049F8AF /* SetGameViewController.h */,
 				A19929D61AE2EDF500FF1D4A /* SetGameViewController.m */,
 				A143F4BA1A76DD3700EBBA47 /* Images.xcassets */,
 				A1F5224B1A76B4D600F770DC /* Supporting Files */,
@@ -200,6 +205,8 @@
 		A1F522651A76B4D700F770DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A16D4E5A1B4CED2100A2C35B /* TestSetGameViewController.h */,
+				A16D4E5B1B4CED2100A2C35B /* TestSetGameViewController.m */,
 				A1F522661A76B4D700F770DC /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -332,6 +339,7 @@
 				A1F522681A76B4D700F770DC /* MatchismoTests.m in Sources */,
 				A1DCCD5E1AEF4E54000E3E35 /* LoggingTestCaseClas.m in Sources */,
 				A16B67541B24D939009BC286 /* SetCardToolboxTestUnit.m in Sources */,
+				A16D4E5C1B4CED2100A2C35B /* TestSetGameViewController.m in Sources */,
 				A19929D51AE2BBF900FF1D4A /* SetCardTestCasesClass.m in Sources */,
 				A1F901CB1B2808660030955C /* HistoryViewControllerTest.m in Sources */,
 			);

@@ -10,16 +10,45 @@
 #import "SetCardDeck.h"
 #import "SetCard.h"
 #import "HistoryViewController.h"
+#import "CardMatchingGame.h"
+#import "SetGameViewController.h"
+#import "TestSetGameViewController.h"
 
 
-@interface SetGameViewController : UIViewController
+@interface SetGameViewController ()
+
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *setCardButtons;
-
+@property (strong, nonatomic)CardMatchingGame* game;
 
 @end
 
 @implementation SetGameViewController
 @synthesize setCardButtons;
+@synthesize game = _game;
+- (CardMatchingGame*) game
+{
+    if (!_game)
+    {
+
+    _game = [[CardMatchingGame alloc] initWithCardCount:[self.setCardButtons count]
+                                PossibleNumberOfMatches:3
+                                              usingDeck:[self createDeck]];
+}
+return _game;
+}
+
+- (Deck*)createDeck
+{
+    return [[SetCardDeck alloc]init];
+}
+
+- (void)viewDidLoad {
+    
+    [self initUI];
+    [self updateUI];
+    
+}
+
 
 + (NSAttributedString*)prepareForDisplayCard:(SetCard*) setCard
 {
@@ -40,6 +69,49 @@
         [contentString setString:[contentString stringByAppendingString:[SetGameViewController stringMatchingSymbolId:symbolId]]];
     }
     return contentString;
+}
+
+
+-(void)initUI
+{
+    /* Walks through the Buttons on the ViewController and matches them with the
+    cards in the game. This operation contains a complex transformation from the from the model representation of the card in the model to a front end usable version.
+   */
+    
+    
+    _game = [TestSetGameViewController demoSetCardDeck]; //For testing purposes
+    
+    int index = 0;
+    for (UIButton* currentButton in [self setCardButtons]) {
+        [currentButton setAttributedTitle:[SetGameViewController prepareForDisplayCard:(SetCard*)[self.game cardAtIndex:index]] forState:UIControlStateNormal];
+        index++;
+    }
+
+}
+
+-(void)updateUI
+//Walks through the Buttons on the ViewController and matches them with the
+// cards in the game. Matching means that if a card was part of an earlier correct set-match, then the button symbolizing the card will be disabled.
+{
+
+    int index = 0;
+    NSMutableArray* mutableSetCardButtons = [self.setCardButtons mutableCopy];
+    while (index <mutableSetCardButtons.count)
+    {
+    UIButton* currentButton = [mutableSetCardButtons objectAtIndex:index];
+        if ([currentButton isEnabled] )
+        {
+     if ([[self.game cardAtIndex:index]isMatched])
+     {
+         
+         [currentButton setEnabled:false];
+         [mutableSetCardButtons replaceObjectAtIndex:index withObject:currentButton];
+     }
+        }
+        index=index+1;
+    }
+    [self setSetCardButtons:mutableSetCardButtons];
+  
 }
          
 + (NSString*) stringMatchingSymbolId:(int)symbolId
@@ -110,17 +182,7 @@
    
 }
 
-- (void)viewDidLoad {
 
-    SetCardDeck* deck = [[SetCardDeck alloc]init];
-    int index = 0;
-    NSArray* setCards = [deck cards];
-    for (UIButton* currentButton in [self setCardButtons]) {
-        [currentButton setAttributedTitle:[SetGameViewController prepareForDisplayCard:(SetCard*)[setCards objectAtIndex:index]] forState:UIControlStateNormal];
-        index++;
-    }
-
-}
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
