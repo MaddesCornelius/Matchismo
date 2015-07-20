@@ -18,6 +18,8 @@
 		A16D4E5C1B4CED2100A2C35B /* TestSetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16D4E5B1B4CED2100A2C35B /* TestSetGameViewController.m */; };
 		A19929D51AE2BBF900FF1D4A /* SetCardTestCasesClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A19929D41AE2BBF900FF1D4A /* SetCardTestCasesClass.m */; };
 		A19929D71AE2EDF500FF1D4A /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19929D61AE2EDF500FF1D4A /* SetGameViewController.m */; };
+		A19ED8251B5BEBA800826F16 /* TestSetGameViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = A16D4E5A1B4CED2100A2C35B /* TestSetGameViewController.h */; };
+		A19ED8261B5BEBA800826F16 /* TestSetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16D4E5B1B4CED2100A2C35B /* TestSetGameViewController.m */; };
 		A1A0BB8A1A7C27E0004490DE /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A0BB891A7C27E0004490DE /* Card.m */; };
 		A1A0BB8D1A7C365D004490DE /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A0BB8C1A7C365D004490DE /* Deck.m */; };
 		A1A0BB901A7E8EEB004490DE /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A0BB8F1A7E8EEB004490DE /* PlayingCard.m */; };
@@ -60,8 +62,8 @@
 		A16B674E1B24C9C8009BC286 /* SetCardToolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardToolbox.h; sourceTree = "<group>"; };
 		A16B674F1B24C9C8009BC286 /* SetCardToolbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardToolbox.m; sourceTree = "<group>"; };
 		A16B67531B24D939009BC286 /* SetCardToolboxTestUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardToolboxTestUnit.m; sourceTree = "<group>"; };
-		A16D4E5A1B4CED2100A2C35B /* TestSetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestSetGameViewController.h; path = UITests/TestSetGameViewController.h; sourceTree = "<group>"; };
-		A16D4E5B1B4CED2100A2C35B /* TestSetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestSetGameViewController.m; path = UITests/TestSetGameViewController.m; sourceTree = "<group>"; };
+		A16D4E5A1B4CED2100A2C35B /* TestSetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestSetGameViewController.h; path = MatchismoTests/UITests/TestSetGameViewController.h; sourceTree = SOURCE_ROOT; };
+		A16D4E5B1B4CED2100A2C35B /* TestSetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestSetGameViewController.m; path = MatchismoTests/UITests/TestSetGameViewController.m; sourceTree = SOURCE_ROOT; };
 		A175A6951B4B08680049F8AF /* SetGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
 		A19929D41AE2BBF900FF1D4A /* SetCardTestCasesClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardTestCasesClass.m; sourceTree = "<group>"; };
 		A19929D61AE2EDF500FF1D4A /* SetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
@@ -167,6 +169,8 @@
 				A1F522551A76B4D600F770DC /* Main.storyboard */,
 				A175A6951B4B08680049F8AF /* SetGameViewController.h */,
 				A19929D61AE2EDF500FF1D4A /* SetGameViewController.m */,
+				A16D4E5A1B4CED2100A2C35B /* TestSetGameViewController.h */,
+				A16D4E5B1B4CED2100A2C35B /* TestSetGameViewController.m */,
 				A143F4BA1A76DD3700EBBA47 /* Images.xcassets */,
 				A1F5224B1A76B4D600F770DC /* Supporting Files */,
 				A1A0BB871A7C2623004490DE /* Model */,
@@ -205,8 +209,6 @@
 		A1F522651A76B4D700F770DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A16D4E5A1B4CED2100A2C35B /* TestSetGameViewController.h */,
-				A16D4E5B1B4CED2100A2C35B /* TestSetGameViewController.m */,
 				A1F522661A76B4D700F770DC /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -312,6 +314,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19ED8251B5BEBA800826F16 /* TestSetGameViewController.h in Sources */,
+				A19ED8261B5BEBA800826F16 /* TestSetGameViewController.m in Sources */,
 				A19929D71AE2EDF500FF1D4A /* SetGameViewController.m in Sources */,
 				A1A0BB901A7E8EEB004490DE /* PlayingCard.m in Sources */,
 				A1A0BB8D1A7C365D004490DE /* Deck.m in Sources */,

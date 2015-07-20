@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "SetCardDeck.h"
+#import "CardMatchingGame.h"
 
 @interface TestSetGameViewController : NSObject
-+ (SetCardDeck*) demoSetCardDeck;
+
+
++ (CardMatchingGame*)demoCardMatchingGame:(NSUInteger)cardCount;
++ (NSMutableArray*)specificSetCardDeck:(NSUInteger)cardCount;
 
 @end

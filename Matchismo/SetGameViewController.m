@@ -19,6 +19,7 @@
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *setCardButtons;
 @property (strong, nonatomic)CardMatchingGame* game;
+- (IBAction)touchCardButton:(UIButton *)sender;
 
 @end
 
@@ -37,12 +38,29 @@
 return _game;
 }
 
+- (IBAction)touchCardButton:(UIButton *)sender {
+    NSUInteger indexOfButton = [self getIndexOfButton:sender];
+    
+}
+
+- (NSUInteger) getIndexOfButton:(UIButton*)sender
+{
+
+    NSUInteger index = [self.setCardButtons indexOfObject:sender];
+    return index;
+}
+
 - (Deck*)createDeck
 {
     return [[SetCardDeck alloc]init];
 }
 
 - (void)viewDidLoad {
+    
+    //For testing purposes - BEGIN
+    NSUInteger numberOfCards = [self.setCardButtons count];
+    _game = [TestSetGameViewController demoCardMatchingGame:numberOfCards]; //For testing purposes
+    //For testing purposes - END
     
     [self initUI];
     [self updateUI];
@@ -78,8 +96,6 @@ return _game;
     cards in the game. This operation contains a complex transformation from the from the model representation of the card in the model to a front end usable version.
    */
     
-    
-    _game = [TestSetGameViewController demoSetCardDeck]; //For testing purposes
     
     int index = 0;
     for (UIButton* currentButton in [self setCardButtons]) {
@@ -192,7 +208,7 @@ if ([[segue identifier]isEqualToString:@"segueTohistoryView"])
 if ([[segue destinationViewController]isKindOfClass:[HistoryViewController class]])
 {
     HistoryViewController* targetVC = (HistoryViewController*)[segue destinationViewController];
-    [targetVC setLogMessages:<#(NSArray *)#>]
+    //[targetVC setLogMessages:<#(NSArray *)#>]
 }
 }
 
